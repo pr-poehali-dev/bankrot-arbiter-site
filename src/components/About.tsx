@@ -3,87 +3,103 @@ import Icon from "@/components/ui/icon";
 
 const About = () => {
   const achievements = [
-    { number: "500+", label: "Успешных дел" },
-    { number: "15", label: "Лет опыта" },
-    { number: "98%", label: "Положительных решений" },
-    { number: "24/7", label: "Поддержка клиентов" },
+    { number: "500+", label: "Успешных миссий", icon: "Trophy" },
+    { number: "15", label: "Световых лет опыта", icon: "Clock" },
+    { number: "98%", label: "Точность попадания", icon: "Target" },
+    { number: "24/7", label: "Связь с базой", icon: "Radio" },
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950 relative">
+      {/* Cosmic background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Ваш персональный адвокат по банкротству
+            <div className="inline-flex items-center bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-2 mb-8">
+              <Icon name="User" size={16} className="text-blue-400 mr-2" />
+              <span className="text-sm text-blue-300">Командир миссии</span>
+            </div>
+
+            <h2 className="text-4xl font-bold text-white mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Ваш персональный штурман в галактике банкротства
             </h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Меня зовут Анна Петрова. Я специализируюсь на банкротстве
-              физических лиц более 15 лет. За это время помогла сотням людей
-              освободиться от долгового бремени и начать новую жизнь.
-            </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Мой подход — это индивидуальная работа с каждым клиентом,
-              прозрачность процесса и гарантированный результат. Я лично веду
-              каждое дело от начала до конца.
+
+            <p className="text-blue-100 mb-6 leading-relaxed text-lg">
+              Меня зовут Анна Петрова. Я капитан космического корабля
+              правосудия, специализирующийся на навигации через астероидные поля
+              долгов уже более 15 лет.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center text-sm text-gray-700">
-                <Icon name="Award" size={16} className="text-sky-500 mr-2" />
-                Член Адвокатской палаты
+            <p className="text-blue-100 mb-10 leading-relaxed text-lg">
+              Моя миссия — провести каждого клиента через черные дыры финансовых
+              проблем к новым звездным системам возможностей. Каждое дело — это
+              уникальная траектория к свободе.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center text-blue-200 bg-slate-800/50 backdrop-blur-sm rounded-xl p-4">
+                <Icon name="Award" size={20} className="text-yellow-400 mr-3" />
+                <span className="text-sm">Орден Адвокатуры</span>
               </div>
-              <div className="flex items-center text-sm text-gray-700">
+              <div className="flex items-center text-blue-200 bg-slate-800/50 backdrop-blur-sm rounded-xl p-4">
                 <Icon
                   name="GraduationCap"
-                  size={16}
-                  className="text-sky-500 mr-2"
+                  size={20}
+                  className="text-green-400 mr-3"
                 />
-                МГУ им. Ломоносова
+                <span className="text-sm">Академия МГУ</span>
               </div>
-              <div className="flex items-center text-sm text-gray-700">
-                <Icon name="Shield" size={16} className="text-sky-500 mr-2" />
-                Страхование ответственности
+              <div className="flex items-center text-blue-200 bg-slate-800/50 backdrop-blur-sm rounded-xl p-4">
+                <Icon
+                  name="Shield"
+                  size={20}
+                  className="text-purple-400 mr-3"
+                />
+                <span className="text-sm">Защитное поле</span>
               </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="grid grid-cols-2 gap-6">
-                  {achievements.map((item, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-3xl font-bold text-sky-600 mb-1">
-                        {item.number}
-                      </div>
-                      <div className="text-sm text-gray-600">{item.label}</div>
+          <div className="space-y-8">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8">
+              <div className="grid grid-cols-2 gap-8">
+                {achievements.map((item, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <Icon
+                        name={item.icon as any}
+                        size={24}
+                        className="text-white"
+                      />
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg bg-sky-50">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <Icon
-                    name="Quote"
-                    size={24}
-                    className="text-sky-500 flex-shrink-0 mt-1"
-                  />
-                  <div>
-                    <p className="text-gray-700 italic mb-2">
-                      "Банкротство — это не конец, а новое начало. Моя задача —
-                      провести вас через этот процесс максимально комфортно."
-                    </p>
-                    <p className="text-sm text-gray-600 font-medium">
-                      — Анна Петрова
-                    </p>
+                    <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                      {item.number}
+                    </div>
+                    <div className="text-sm text-slate-300">{item.label}</div>
                   </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8">
+              <div className="flex items-start space-x-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="Quote" size={24} className="text-white" />
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <p className="text-purple-100 italic mb-4 text-lg leading-relaxed">
+                    "Банкротство — это не крушение корабля, а телепортация в
+                    новую галактику возможностей. Моя задача — быть вашим
+                    проводником в этом квантовом скачке."
+                  </p>
+                  <p className="text-sm text-purple-300 font-medium">
+                    — Капитан Анна Петрова
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
