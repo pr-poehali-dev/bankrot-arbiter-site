@@ -1,0 +1,21 @@
+Г/Index.tsx" partial>
+1арантия результата</h4>
+                    : import Hero from "@/components<p className="text-sm text-gray-700/Hero";
+2: import Blog">
+                      Мы гарантируемSection from "@/components/BlogSection";
+3: 
+4: const успешное завершение процед Index = () => {
+5:   return (уры банкротства 
+                      или
+6:     <div className="min-h-screen">
+7:       <Hero /> возвращаем 50%
+8:       <BlogSection /> от стоимости усл
+9:     </div>
+10:   );уг.
+                    </p>
+11: };
+12: 
+13: export default Index;
+
+                  </div>
+                
